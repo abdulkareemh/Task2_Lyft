@@ -51,7 +51,7 @@ class SternmanEngineTest(unittest.TestCase):
         warning_light_on =True
         current_date = today
 
-        car = CarFactory.create_rorschach( current_date,last_service_date,warning_light_on)
+        car = CarFactory.create_palindrome( current_date,last_service_date,warning_light_on)
         self.assertTrue(car.needs_service())
     def test_engine_should_not_be_serviced(self):
         today = datetime.today().date()
@@ -59,6 +59,6 @@ class SternmanEngineTest(unittest.TestCase):
         warning_light_on =False
         current_date = today
 
-        car = CarFactory.create_rorschach(current_date,last_service_date,warning_light_on)
+        car = CarFactory.create_palindrome(current_date,last_service_date,warning_light_on)
         self.assertTrue(car.needs_service())
     
